@@ -1,0 +1,11 @@
+// Create a cone
+string $cone[] = `polyCone -r 1 -h 2 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1`;
+select $cone;
+move 0 1 0;
+rename $cone[0] "Fufu";
+
+// Create a sphere
+string $sphere[] = `polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
+select $sphere;
+move 1 1 1;
+rename $sphere[0] "Soup";
