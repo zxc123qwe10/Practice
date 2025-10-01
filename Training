@@ -26,8 +26,9 @@ for ($each in $sel){
 string $staff[] = {"rob","pete","jason"}
 //using print will show it also make it so pete will show up
 print $staff[1];
-//
+//made a SuperHappyDude that is a polycube called happydude
 string $SuperHappyDude[] = `polyCube -name "HappyDude"`;
+//here it will make SuperHappyDude move     
 print $SuperHappyDude[0];
 move 0 1 0 -r $SuperHappyDude[0];
 
@@ -37,7 +38,10 @@ int $one = 2;
 int $calc = $one * 10;
 // by printing it will show the answer
 print $calc;
-
+//ls means list and sl means selection so it will select everything that o selected
+string $wow[] = `ls -sl`;
+//everything that was selected move to the location
+move -r 0 2 0 $sel;
 
 // Car Movement
 string $sel[] = `ls -sl`;
