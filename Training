@@ -20,6 +20,21 @@ for ($each in $sel){
     move 0 3 0;
 }
 
+// Car Movement
+string $sel[] = `ls -sl`;
+select "CarBase";
+currentTime 1;
+setKeyframe -attribute
+"translateX" -value 0;
+
+currentTime 2;
+setKeyframe -attribute
+"translateX" -value -1;
+
+currentTime 2;
+setKeyframe -attribute
+"translateX" -value -2;
+
 
 
 //made a list of staffs and the names
@@ -43,169 +58,12 @@ string $wow[] = `ls -sl`;
 //everything that was selected move to the location
 move -r 0 2 0 $sel;
 
-// Car Movement
-string $sel[] = `ls -sl`;
-select "CarBase";
-currentTime 1;
-setKeyframe -attribute
-"translateX" -value 0;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -1;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -2;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -3;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -4;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -5;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -6;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -7;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -8;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -9;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -10;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -11;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -12;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -13;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -14;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -15;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -16;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -17;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -18;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -19;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -20;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -21;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -22;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -23;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -24;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -25;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -26;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -27;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -28;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -29;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -30;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -31;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -32;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -33;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -34;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -35;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -36;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -37;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -38;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -39;
-
-currentTime 2;
-setKeyframe -attribute
-"translateX" -value -40;
+// Create the window
+window -widthHeight 300 200 -title "My Perfect UI" -visible on myCookie;
+ 
+// makes a button that can delets the window and is called CloseUI
+columnLayout;
+button -label "CloseUI" -command "deleteUI myCookie";
+ 
+// Shows the window
+showWindow myCookie;
