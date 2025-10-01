@@ -21,6 +21,24 @@ for ($each in $sel){
 }
 
 
+
+//made a list of staffs and the names
+string $staff[] = {"rob","pete","jason"}
+//using print will show it also make it so pete will show up
+print $staff[1];
+//
+string $SuperHappyDude[] = `polyCube -name "HappyDude"`;
+print $SuperHappyDude[0];
+move 0 1 0 -r $SuperHappyDude[0];
+
+//makes the one into a 2
+int $one = 2;
+// and because one is now 2 is the answer for one 8 10 is 20
+int $calc = $one * 10;
+// by printing it will show the answer
+print $calc;
+
+
 // Car Movement
 string $sel[] = `ls -sl`;
 select "CarBase";
