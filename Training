@@ -67,3 +67,28 @@ button -label "CloseUI" -command "deleteUI myCookie";
  
 // Shows the window
 showWindow myCookie;
+
+
+// creats a window and the width and height and also the name and if is showing or not
+string $myCookie = `window -widthHeight 300 300 -title "MakeLifeEz" -visible on`;
+ 
+// creates a layout
+columnLayout -adjustableColumn true -rowSpacing 10;
+ 
+// button to select all objects and the colour is dark green
+button -label "SelectAll" 
+       -backgroundColor 0.2 0.4 0.2 
+       -command "select -all;";
+ 
+// button to undo stuff selected and the colour is bright green
+button -label "UndoAll" 
+       -backgroundColor 0.6 1.0 0.6 
+       -command "select -d;";
+ 
+// button to close the window and change the colour to red
+button -label "CloseUI" 
+       -backgroundColor 0.8 0.2 0.2 
+       -command ("deleteUI " + $myCookie);
+ 
+// shows the window
+showWindow $myCookie;
