@@ -58,22 +58,13 @@ string $wow[] = `ls -sl`;
 //everything that was selected move to the location
 move -r 0 2 0 $sel;
 
-// Create the window
-window -widthHeight 300 200 -title "My Perfect UI" -visible on myCookie;
- 
-// makes a button that can delets the window and is called CloseUI
-columnLayout;
-button -label "CloseUI" -command "deleteUI myCookie";
- 
-// Shows the window
-showWindow myCookie;
 
 
 // creats a window and the width and height and also the name and if is showing or not
-string $myCookie = `window -widthHeight 300 300 -title "MakeLifeEz" -visible on`;
+string $myCookie = `window -widthHeight 230 110 -title "MakeLifeEz" -visible on`;
  
 // creates a layout
-columnLayout -adjustableColumn true -rowSpacing 10;
+columnLayout -adjustableColumn true -rowSpacing 15;
  
 // button to select all objects and the colour is dark green
 button -label "SelectAll" 
