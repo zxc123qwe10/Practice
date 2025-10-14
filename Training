@@ -85,7 +85,6 @@ button -label "CloseUI"
 showWindow $myCookie;
 
 
-
 // Build the window
 
 string $F1UI = `window -widthHeight 250 200 -title "UI" -visible on`;
@@ -145,7 +144,9 @@ size 0.82 0.82 0.82;
 }
  
 // Show the window
-showWindow F1UI;
+showWindow;
+
+
 
 
 
