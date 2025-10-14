@@ -83,3 +83,76 @@ button -label "CloseUI"
  
 // shows the window
 showWindow $myCookie;
+
+
+
+// Build the window
+
+string $F1UI = `window -widthHeight 250 200 -title "UI" -visible on`;
+
+columnLayout -adjustableColumn true -rowSpacing 15;
+
+button -label "Create F1Car" -command "polyCube()";
+button -label "Create F1Wheels" -command "polyCylinder()";
+
+// Define a procedure for "F1CarBase"
+global proc polyCube() {
+
+// create F1CarBase
+string $F1CarBase[] = `polyCube`;
+select $F1CarBase;
+rename $F1CarBase[0] "F1CarBase";
+move 0 2 0;
+scale 6 2 3;
+}
+ 
+// Define a procedure for "F1Wheels"
+global proc polyCylinder() {
+
+// create F1WheelsFrontRight
+string $F1WheelsFR[] = `polyCylinder`;
+select $F1WheelsFR;
+rename $F1WheelsFR[0] "F1WheelsFR";
+move 2 0.4 2;
+rotate -90 0 0;
+
+
+// create WheelFrontLeft
+string $F1WheelsFL[] = `polyCylinder`;
+select $F1WheelsFL;
+rename $F1WheelsFL[0] "F1WheelsFL";
+move 2 0.4 -2;
+rotate -90 0 0;
+
+
+// create WheelBackRight
+string $F1WheelsBR[] = `polyCylinder`;
+select $F1WheelsBR;
+rename $F1WheelsBR[0] "F1WheelsBR";
+move -2 0.4 2;
+rotate -90 0 0;
+
+
+// create WheelBackLeft
+
+string $F1WheelsBL[] = `polyCylinder`;
+select $F1WheelsBL;
+rename $F1WheelsBL[0] "F1WheelsBL";
+move -2 0.4 -2;
+rotate -90 0 0;
+size 0.82 0.82 0.82;
+
+}
+ 
+// Show the window
+showWindow F1UI;
+
+
+
+
+
+Wheel1.rotateZ = CarBody.translateX * -25;
+Wheel2.rotateZ = CarBody.translateX * -25;
+Wheel3.rotateZ = CarBody.translateX * -25;
+Wheel4.rotateZ = CarBody.translateX * -25;
+steerwheel.rotate
