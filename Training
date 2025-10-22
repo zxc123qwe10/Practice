@@ -157,3 +157,37 @@ Wheel2.rotateZ = CarBody.translateX * -25;
 Wheel3.rotateZ = CarBody.translateX * -25;
 Wheel4.rotateZ = CarBody.translateX * -25;
 steerwheel.rotate
+
+
+//randomstuff
+//Pavel O
+//v1
+
+
+//makes it so when the group is first created it will delete if opened again
+if (`$group -exists Friends`) delete Friends;
+
+//creates cube called Dave
+string $cube[] = `polyCube -name "Dave"`;
+
+//creates sphere called Alice
+string $sphere[] = `polySphere -name "Alice"`;
+
+//movement
+move 0 2 0 $cube;
+ Friends
+move 0 4 0 $sphere;
+
+//creates a group called friends.
+string $group = `group -name "Friends" $cube $sphere`;
+
+//rotates the group in the same position
+rotate -r 0 0 90 $group;
+//random rotate
+int $randx (int)(0, 360);
+int $randy (int)(0, 360);
+int $randz (int)(0, 360);
+
+rotate -r $randx $randy $randz $group;
+
+int rand 0 360;
