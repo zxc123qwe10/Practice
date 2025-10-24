@@ -163,43 +163,26 @@ steerwheel.rotate
 //Pavel O
 //v1
 
-
-//makes it so when the group is first created it will delete if opened again
-if (`$group -exists Friends`) delete Friends;
-
-//creates cube called Dave
+// Create objects
 string $cube[] = `polyCube -name "Dave"`;
-
-//creates sphere called Alice
 string $sphere[] = `polySphere -name "Alice"`;
-
-//movement
-move 0 2 0 $cube;
- Friends
-move 0 4 0 $sphere;
-
-//creates a group called friends.
-string $group = `group -name "Friends" $cube $sphere`;
-
-//rotates the group in the same position
-rotate -r 0 0 90 $group;
-//random rotate
-int $randx (int)(0, 360);
-int $randy (int)(0, 360);
-int $randz (int)(0, 360);
-
-rotate -r $randx $randy $randz $group;
-
-int rand 0 360;
+ 
+// Position objects
+move 0 5 0 $cube[0];
+move 0 1 0 $sphere[0];
+ 
+// Group objects named "Friends"
+string $group = `group -name "Friends" $cube[0] $sphere[0]`;
 
 
 
-//name pavel
-//version v2
-//random group
 
 
-// if "friends" exists delete if is there
+// Name pavel
+// Version v2
+// Random group
+ 
+// Check if "Friends" group exists and delete if it does
 if (`objExists "Friends"`) {
     delete "Friends";
 }
@@ -209,11 +192,37 @@ string $cube[] = `polyCube -name "Dave"`;
 string $sphere[] = `polySphere -name "Alice"`;
  
 // Position objects
-move 2 2 2 $cube[0];
+move 0 5 0 $cube[0];
 move 0 1 0 $sphere[0];
  
 // Group objects named "Friends"
 string $group = `group -name "Friends" $cube[0] $sphere[0]`;
-
+ 
 // Rotate the group 90 degrees
 rotate 0 0 90 "Friends";
+
+
+
+Forest Ecosystem Generator
+
+//main window
+if (`window -exists forestUI`) deleteUI -window forestUI;
+window -title "Forest Ecosystem Generator" forestUI;
+ 
+//layout
+columnLayout -adjustableColumn true;
+ 
+//UI for selecting asset categories (trees, bushes, rocks, etc.)
+
+//size variation, rotation variation changer
+ 
+//toggles for different layers (ground, mid, cover)
+
+// Adds a button that Generates the scene creation based on settings
+ 
+// Adds a buttons for saving and loading environment setups
+ 
+// Show the window
+ 
+//functions for generating assets, saving/loading templates
+
