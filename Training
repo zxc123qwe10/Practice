@@ -191,3 +191,26 @@ int $randz (int)(0, 360);
 rotate -r $randx $randy $randz $group;
 
 int rand 0 360;
+
+
+
+//name pavel
+//version v2
+//random group
+
+
+// if "friends" exists delete if is there
+if (`objExists "Friends"`) {
+    delete "Friends";
+}
+ 
+// Create objects
+string $cube[] = `polyCube -name "Dave"`;
+string $sphere[] = `polySphere -name "Alice"`;
+ 
+// Position objects
+move 2 2 2 $cube[0];
+move 0 1 0 $sphere[0];
+ 
+// Group objects named "Friends"
+string $group = `group -name "Friends" $cube[0] $sphere[0]`;
