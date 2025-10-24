@@ -214,3 +214,6 @@ move 0 1 0 $sphere[0];
  
 // Group objects named "Friends"
 string $group = `group -name "Friends" $cube[0] $sphere[0]`;
+
+// Rotate the group 90 degrees
+rotate 0 0 90 "Friends";
