@@ -226,3 +226,71 @@ columnLayout -adjustableColumn true;
  
 //functions for generating assets, saving/loading templates
 
+
+
+
+
+
+
+
+// Create a window for the UI
+window -title "Building Management" -widthHeight 200 200 ;
+
+// Set up the main window and layout
+columnLayout -adjustableColumn true -rowSpacing 30;
+ 
+// Add options to choose building parts
+
+// Select walls, doors, windows, roofs and more.
+ 
+// Add controls to set how many parts to use
+
+// Sliders or fields for numbers and sizes
+ 
+// Add a button to build the structure
+
+// Add buttons to save and load building setups
+
+// Save current setup or load a saved one
+ 
+// Show the window
+showWindow;
+
+
+
+
+
+
+
+//v1
+//PavelO
+//Building Managemen
+// Create the UI and deletes if is already there
+if (`window -exists BuildMag`) delete `window`;
+ 
+window -title "BuildingMaker" -widthHeight 200 200 F1UI;
+columnLayout -adjustableColumn true -rowSpacing 30;
+
+// Starts at middle
+global float $xPos = 0;
+
+// spawn a Wall
+global proc spawnWall() {
+    global float $xPos;
+    string $cube[] = `polyCube`;
+    move $xPos 0 0 $cube[0];
+// snaps the next cube to the other
+    $xPos += 1;
+}
+ 
+// Button to spawn wall
+button -label "Spawn Wall" -command "spawnWall()";
+ 
+showWindow;
+ 
+
+
+
+
+
+
