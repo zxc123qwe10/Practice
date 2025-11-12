@@ -34,7 +34,7 @@ setKeyframe -attribute
 currentTime 2;
 setKeyframe -attribute
 "translateX" -value -2;
-
+.
 
 
 //made a list of staffs and the names
