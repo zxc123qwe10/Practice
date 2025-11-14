@@ -294,3 +294,123 @@ showWindow;
 
 
 
+
+
+
+
+
+
+
+//v2
+//PavelO
+//Building Management
+
+//starting position
+global float $xPos = 0;
+ 
+//create window
+if (`window -exists BuildMag`) delete `window`;
+window -title "BuildingMaker" -widthHeight 200 200 F1UI;
+ 
+//layout
+columnLayout -adjustableColumn true -rowSpacing 30;
+ 
+//buttons
+
+button -label "Spawn Greywall" -command "spawnGreywall()";
+
+ 
+//shows the window
+showWindow;
+ 
+//spawns Greywall aka wall
+global proc spawnGreywall() {
+    global float $xPos;
+ 
+    //copies the greywall
+    string $dup[] = `duplicate "greywall"`;
+    //moves it to the current position
+    move $xPos 0 0 $dup[0];
+ 
+    //snaps to the current spawn
+    $xPos += 4; //adjust spacing as needed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//v3
+//PavelO
+//Building Management
+
+//starting position
+global float $xPos = 0;
+ 
+//create window
+if (`window -exists BuildMag`) delete `window`;
+window -title "BuildingMaker" -widthHeight 200 200 F1UI;
+ 
+//layout
+columnLayout -adjustableColumn true -rowSpacing 30;
+ 
+//buttons
+button -label "Spawn Greenwall" -command "spawnGreenwall()";
+button -label "Spawn Greywall" -command "spawnGreywall()";
+button -label "Spawn Yellowwall" -command "spawnYellowwall()";
+ 
+//shows the window
+showWindow;
+ 
+//spawns Greywall aka wall
+global proc spawnGreywall() {
+    global float $xPos;
+ 
+    //copies the greywall
+    string $dup[] = `duplicate "greywall"`;
+    //moves it to the current position
+    move $xPos 0 0 $dup[0];
+ 
+    //snaps to the current spawn
+    $xPos += 4; //adjust spacing as needed
+}
+ 
+ //spawns Greenwall aka window
+global proc spawnGreenwall() {
+    global float $xPos;
+ 
+    //copies the greenwall
+    string $dup[] = `duplicate "greenwall"`;
+    //moves it to the current position
+    move $xPos 0 0 $dup[0];
+ 
+    //snaps to the current spawn
+    $xPos += 4; //adjust spacing as needed
+}
+
+
+ //spawns Yellowwall aka door
+global proc spawnYellowwall() {
+    global float $xPos;
+ 
+    //copies the yellowwall
+    string $dup[] = `duplicate "yellowwall"`;
+    //moves it to the current position
+    move $xPos 0 0 $dup[0];
+ 
+    //snaps to the current spawn
+    $xPos += 4; //adjust spacing as needed
+}
+
+
+
