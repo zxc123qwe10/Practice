@@ -414,3 +414,88 @@ global proc spawnYellowwall() {
 
 
 
+
+
+
+
+
+
+
+    //v4
+    //PavelO
+    //Building Management
+    // Delete window if exists
+    if (`window -exists BuildMag`) delete `window`;
+     
+    // Create UI
+    window -title "BuildingMaker" -widthHeight 200 200 F1UI; 
+    // Layout
+    columnLayout -adjustableColumn true -rowSpacing 30;
+     
+    // Buttons
+    button -label "Spawn Wall" -command "spawnWall()";
+    button -label "Spawn Wall Opposite" -command "spawnWallOpposite()";
+    button -label "Spawn Door" -command "spawnDoor()";
+    button -label "Spawn Door Opposite" -command "spawnDoorOpposite()";
+    button -label "Spawn Window" -command "spawnWindow()";
+    button -label "Spawn Window Opposite" -command "spawnWindowOpposite()";
+     
+    showWindow;
+     
+    // Global variables
+    global float $lastSpawnX = 0; // last spawn position
+    global float $initialX = 0;   // initial reference point
+     
+    // Spawn Wall
+    global proc spawnWall() {
+        global float $initialX;
+        global float $lastSpawnX;
+        string $dup[] = `duplicate "Wall"`;
+        move $lastSpawnX 2 0 $dup[0];
+        print("Spawn Wall at X: " + $lastSpawnX + "\n");
+        $lastSpawnX += 4;
+    }
+     
+    // Spawn Wall Opposite (mirrored position)
+    global proc spawnWallOpposite() {
+        global float $lastSpawnX;
+        float $mirrorX = -$lastSpawnX; // mirror position
+        string $dup[] = `duplicate "Wall"`;
+        move $mirrorX 2 0 $dup[0];
+        print("Spawn Wall Opposite at X: " + $mirrorX + "\n");
+    }
+     
+    // Similarly for Door
+    global proc spawnDoor() {
+        global float $lastSpawnX;
+        string $dup[] = `duplicate "Door"`;
+        move $lastSpawnX 2 0 $dup[0];
+        print("Spawn Door at X: " + $lastSpawnX + "\n");
+        $lastSpawnX += 4;
+    }
+    global proc spawnDoorOpposite() {
+        global float $lastSpawnX;
+        float $mirrorX = -$lastSpawnX;
+        string $dup[] = `duplicate "Door"`;
+        move $mirrorX 2 0 $dup[0];
+        print("Spawn Door Opposite at X: " + $mirrorX + "\n");
+    }
+     
+    // Similarly for Window
+    global proc spawnWindow() {
+        global float $lastSpawnX;
+        string $dup[] = `duplicate "Window"`;
+        move $lastSpawnX 2 0 $dup[0];
+        print("Spawn Window at X: " + $lastSpawnX + "\n");
+        $lastSpawnX += 4;
+    }
+    global proc spawnWindowOpposite() {
+        global float $lastSpawnX;
+        float $mirrorX = -$lastSpawnX;
+        string $dup[] = `duplicate "Window"`;
+        move $mirrorX 2 0 $dup[0];
+        print("Spawn Window Opposite at X: " + $mirrorX + "\n");
+    }
+     
+
+
